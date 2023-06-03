@@ -1,0 +1,228 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-family: TenbyFive;
+  scrollbar-width: none;
+  background-color: #e6e6e6;
+}
+body,
+#root,
+.main {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+.main {
+  padding-bottom: min(75px, 20vh);
+}
+header {
+  align-items: center;
+  background-color: #14279b;
+  box-shadow: 0px 2px 0px 1px white;
+  color: #e6e6e6;
+  display: flex;
+  font-size: xx-large;
+  font-weight: bold;
+  height: min(75px, 20vh);
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: min(1rem, 5vh);
+  width: 100%;
+  position: relative;
+  top: 0;
+}
+.headerSpan,
+.footerSpan {
+  text-align: center;
+  user-select: none;
+}
+.headerIcon {
+  color: #e6e6e6;
+  font-size: xx-large;
+  margin-right: 1vh;
+}
+footer {
+  align-items: center;
+  background-color: #14279b;
+  box-shadow: 0px -2px 0px 1px white;
+  color: #e6e6e6;
+  display: flex;
+  font-size: x-large;
+  height: min(75px, 20vh);
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.footerIcon {
+  color: #e6e6e6;
+  font-size: x-large;
+  margin-right: 1vh;
+}
+.footerIcon:hover {
+  animation: spin 0.5s linear;
+  color: white;
+}
+.container {
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px grey;
+  margin: 20px auto;
+  padding: 1rem;
+  width: 50vw;
+}
+fieldset {
+  background-color: whitesmoke;
+  border-color: #14279b;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+}
+legend {
+  font-size: x-large;
+  font-weight: bold;
+}
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+}
+.btnContainer > div {
+  display: flex;
+}
+.btnContainer .fa {
+  color: #14279b;
+  font-size: 2rem;
+}
+.btnContainer .fa:hover {
+  color: #8591df;
+  cursor: pointer;
+}
+.btn {
+  margin-right: 0.5rem;
+}
+.btn input {
+  display: none;
+}
+input[type="text"] {
+  color: black;
+  background-color: whitesmoke;
+  border-color: #14279b;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+  font-family: TenbyFive;
+  font-size: large;
+  margin: 0.5rem 0 0 0;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+p,
+h3 {
+  margin: 1px auto;
+  text-align: center;
+  user-select: none;
+}
+.cardStack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background-color: whitesmoke;
+  border-color: #14279b;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex: 1 0 45%;
+  height: max-content;
+  margin: 5px;
+}
+.card .fa {
+  color: white;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card:hover .fa {
+  font-size: 25px;
+}
+.cardIconWrap {
+  align-items: center;
+  background-color: #14279b;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  width: 2rem;
+}
+.cardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  width: calc(100% - 2rem);
+}
+.clear {
+  clear: both;
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .container {
+    width: 75vw;
+    margin: 20px auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .headerIcon,
+  header {
+    font-size: x-large;
+  }
+  footer,
+  .footerIcon {
+    font-size: medium;
+  }
+  .container {
+    width: 95vw;
+    margin: 20px auto;
+  }
+  .card {
+    flex: 1 0 90%;
+    border-left-width: 0.5rem;
+  }
+  .btnContainer .fa,
+  .button {
+    font-size: x-large;
+  }
+}
+@font-face {
+  font-family: "TenbyFive";
+  src: url("../fonts/tenby-five-webfont.otf"),
+    url("../fonts/tenby-five-webfont.eot"),
+    url("../fonts/tenby-five-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/tenby-five-webfont.woff2") format("woff2"),
+    url("../fonts/tenby-five-webfont.woff") format("woff"),
+    url("../fonts/tenby-five-webfont.ttf") format("truetype"),
+    url("../fonts/tenby-five-webfont.svg#TenbyFive") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
