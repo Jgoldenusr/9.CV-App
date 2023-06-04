@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/9.CV-App/static/css/main.f2f825bd.css",
-    "main.js": "/9.CV-App/static/js/main.d1c01699.js",
+    "main.css": "/9.CV-App/static/css/main.8248fe57.css",
+    "main.js": "/9.CV-App/static/js/main.8212529a.js",
     "static/media/Lato-Italic.ttf": "/9.CV-App/static/media/Lato-Italic.d558a4afa787a39a7512.ttf",
     "static/media/Lato-Regular.ttf": "/9.CV-App/static/media/Lato-Regular.633ffe4a4b5b7277cc35.ttf",
     "static/media/Lato-Bold.ttf": "/9.CV-App/static/media/Lato-Bold.76eff6487a1e1011628f.ttf",
@@ -15,11 +15,11 @@
     "static/media/tenby-five-webfont.otf": "/9.CV-App/static/media/tenby-five-webfont.80eaa68d9c86152b4655.otf",
     "static/media/tenby-five-webfont.woff2": "/9.CV-App/static/media/tenby-five-webfont.3fbeae1cbc4432d6a524.woff2",
     "index.html": "/9.CV-App/index.html",
-    "main.f2f825bd.css.map": "/9.CV-App/static/css/main.f2f825bd.css.map",
-    "main.d1c01699.js.map": "/9.CV-App/static/js/main.d1c01699.js.map"
+    "main.8248fe57.css.map": "/9.CV-App/static/css/main.8248fe57.css.map",
+    "main.8212529a.js.map": "/9.CV-App/static/js/main.8212529a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2f825bd.css",
-    "static/js/main.d1c01699.js"
+    "static/css/main.8248fe57.css",
+    "static/js/main.8212529a.js"
   ]
 }
