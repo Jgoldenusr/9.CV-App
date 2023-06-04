@@ -154,7 +154,7 @@ function App() {
     <div className="main">
       <Header title="CV-App" />
       <div className="container">
-        <Controller cbs={(addPhoto, clearInfo, generatePdf, setView)} />
+        <Controller cbs={{ addPhoto, clearInfo, generatePdf, setView }} />
         {view === "pdfPreview" ? (
           <PDFViewer className="pdfContainer">
             <Docpdf info={info} infoList={infoList} />
