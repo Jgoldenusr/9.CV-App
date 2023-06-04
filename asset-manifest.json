@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/9.CV-App/static/css/main.f2f825bd.css",
+    "main.js": "/9.CV-App/static/js/main.d1c01699.js",
+    "static/media/Lato-Italic.ttf": "/9.CV-App/static/media/Lato-Italic.d558a4afa787a39a7512.ttf",
+    "static/media/Lato-Regular.ttf": "/9.CV-App/static/media/Lato-Regular.633ffe4a4b5b7277cc35.ttf",
+    "static/media/Lato-Bold.ttf": "/9.CV-App/static/media/Lato-Bold.76eff6487a1e1011628f.ttf",
+    "static/media/Rokkitt-Italic.ttf": "/9.CV-App/static/media/Rokkitt-Italic.ed4ddaf5b4add837a0af.ttf",
+    "static/media/Rokkitt-Bold.ttf": "/9.CV-App/static/media/Rokkitt-Bold.b17a10b65a2eb6814e89.ttf",
+    "static/media/Rokkitt-Regular.ttf": "/9.CV-App/static/media/Rokkitt-Regular.ae8cfa04a8f2e958c8a4.ttf",
+    "static/media/tenby-five-webfont.svg": "/9.CV-App/static/media/tenby-five-webfont.f342c7196aeb64799bd7.svg",
+    "static/media/tenby-five-webfont.eot": "/9.CV-App/static/media/tenby-five-webfont.8ff12776e5c5b61f6485.eot",
+    "static/media/tenby-five-webfont.ttf": "/9.CV-App/static/media/tenby-five-webfont.8df3625f2b4dacfa8793.ttf",
+    "static/media/tenby-five-webfont.woff": "/9.CV-App/static/media/tenby-five-webfont.42cf1d096e2e67c6faf0.woff",
+    "static/media/tenby-five-webfont.otf": "/9.CV-App/static/media/tenby-five-webfont.80eaa68d9c86152b4655.otf",
+    "static/media/tenby-five-webfont.woff2": "/9.CV-App/static/media/tenby-five-webfont.3fbeae1cbc4432d6a524.woff2",
+    "index.html": "/9.CV-App/index.html",
+    "main.f2f825bd.css.map": "/9.CV-App/static/css/main.f2f825bd.css.map",
+    "main.d1c01699.js.map": "/9.CV-App/static/js/main.d1c01699.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2f825bd.css",
+    "static/js/main.d1c01699.js"
+  ]
+}
