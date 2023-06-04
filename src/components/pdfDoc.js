@@ -11,7 +11,6 @@ import {
   Document,
   Image,
   Page,
-  PDFViewer,
   StyleSheet,
   Text,
   View,
@@ -110,7 +109,8 @@ const styles = StyleSheet.create({
 });
 
 export default function Docpdf(props) {
-  const { basicInfo, practicalInfoArray, educationInfoArray, imageSrc } = props;
+  const { basicInfo, imageSrc } = props.info;
+  const { practicalInfo, educationInfo } = props.infoList;
   Font.register({
     family: "Lato",
     fonts: [
@@ -130,103 +130,101 @@ export default function Docpdf(props) {
 
   return (
     /* jshint ignore:start */
-    <PDFViewer style={{ height: "50vh", width: "100%", margin: "0.5rem auto" }}>
-      <Document>
-        <Page size="LETTER">
-          <View style={[styles.global, styles.mainDetails]}>
-            <View style={[styles.personalInfo]}>
-              <View style={[styles.global, styles.headshot]}>
-                <Image
-                  style={[styles.global, styles.img]}
-                  src={imageSrc ? imageSrc : headshot}
-                  alt="Profile photo"
-                />
-              </View>
-              <View style={[styles.global]}>
-                <Text style={[styles.global, styles.nameH1]}>{`${
-                  basicInfo.name + " " + basicInfo.surname
-                }`}</Text>
-                <Text
-                  style={[styles.global, styles.nameH2]}
-                >{`${basicInfo.title}`}</Text>
-              </View>
+    <Document>
+      <Page size="LETTER">
+        <View style={[styles.global, styles.mainDetails]}>
+          <View style={[styles.personalInfo]}>
+            <View style={[styles.global, styles.headshot]}>
+              <Image
+                style={[styles.global, styles.img]}
+                src={imageSrc ? imageSrc : headshot}
+                alt="Profile photo"
+              />
             </View>
             <View style={[styles.global]}>
-              <View style={[styles.global, styles.ul]}>
-                <Text
-                  style={[styles.global, styles.li]}
-                >{`D: ${basicInfo.dir}`}</Text>
-                <Text
-                  style={[styles.global, styles.li]}
-                >{`T: ${basicInfo.phone}`}</Text>
-                <Text
-                  style={[styles.global, styles.li]}
-                >{`E: ${basicInfo.email}`}</Text>
-              </View>
+              <Text style={[styles.global, styles.nameH1]}>{`${
+                basicInfo.name + " " + basicInfo.surname
+              }`}</Text>
+              <Text
+                style={[styles.global, styles.nameH2]}
+              >{`${basicInfo.title}`}</Text>
+            </View>
+          </View>
+          <View style={[styles.global]}>
+            <View style={[styles.global, styles.ul]}>
+              <Text
+                style={[styles.global, styles.li]}
+              >{`D: ${basicInfo.dir}`}</Text>
+              <Text
+                style={[styles.global, styles.li]}
+              >{`T: ${basicInfo.phone}`}</Text>
+              <Text
+                style={[styles.global, styles.li]}
+              >{`E: ${basicInfo.email}`}</Text>
+            </View>
+          </View>
+          <View style={[styles.global, styles.clear]}></View>
+        </View>
+        <View style={[styles.global, styles.mainArea]}>
+          <View style={[styles.global, styles.section]}>
+            <View style={[styles.global, styles.sectionTitle]}>
+              <Text style={[styles.global, styles.sectionTitleH1]}>
+                Experiencia laboral
+              </Text>
+            </View>
+            <View style={[styles.global, styles.sectionContent]}>
+              {practicalInfo.map((element) => {
+                return (
+                  <View
+                    style={[styles.global, styles.article]}
+                    key={element.id}
+                  >
+                    <Text style={[styles.global, styles.sectionContentH2]}>
+                      {`${element.company + ", " + element.city}`}
+                    </Text>
+                    <Text style={[styles.global, styles.subDetails]}>
+                      {`${element.from + " - " + element.to}`}
+                    </Text>
+                    <Text style={[styles.global, styles.paragraph]}>
+                      {`${element.position}`}
+                    </Text>
+                  </View>
+                );
+              })}
             </View>
             <View style={[styles.global, styles.clear]}></View>
           </View>
-          <View style={[styles.global, styles.mainArea]}>
-            <View style={[styles.global, styles.section]}>
-              <View style={[styles.global, styles.sectionTitle]}>
-                <Text style={[styles.global, styles.sectionTitleH1]}>
-                  Experiencia laboral
-                </Text>
-              </View>
-              <View style={[styles.global, styles.sectionContent]}>
-                {practicalInfoArray.map((element) => {
-                  return (
-                    <View
-                      style={[styles.global, styles.article]}
-                      key={element.id}
-                    >
-                      <Text style={[styles.global, styles.sectionContentH2]}>
-                        {`${element.company + ", " + element.city}`}
-                      </Text>
-                      <Text style={[styles.global, styles.subDetails]}>
-                        {`${element.from + " - " + element.to}`}
-                      </Text>
-                      <Text style={[styles.global, styles.paragraph]}>
-                        {`${element.position}`}
-                      </Text>
-                    </View>
-                  );
-                })}
-              </View>
-              <View style={[styles.global, styles.clear]}></View>
+          <View style={[styles.global, styles.section]}>
+            <View style={[styles.global, styles.sectionTitle]}>
+              <Text style={[styles.global, styles.sectionTitleH1]}>
+                Experiencia académica
+              </Text>
             </View>
-            <View style={[styles.global, styles.section]}>
-              <View style={[styles.global, styles.sectionTitle]}>
-                <Text style={[styles.global, styles.sectionTitleH1]}>
-                  Experiencia académica
-                </Text>
-              </View>
-              <View style={[styles.global, styles.sectionContent]}>
-                {educationInfoArray.map((element) => {
-                  return (
-                    <View
-                      style={[styles.global, styles.article]}
-                      key={element.id}
-                    >
-                      <Text style={[styles.global, styles.sectionContentH2]}>
-                        {`${element.college + ", " + element.city}`}
-                      </Text>
-                      <Text style={[styles.global, styles.subDetails]}>
-                        {`${element.from + " - " + element.to}`}
-                      </Text>
-                      <Text style={[styles.global, styles.paragraph]}>
-                        {`${element.grade}, ${element.subject}`}
-                      </Text>
-                    </View>
-                  );
-                })}
-              </View>
-              <View style={[styles.global, styles.clear]}></View>
+            <View style={[styles.global, styles.sectionContent]}>
+              {educationInfo.map((element) => {
+                return (
+                  <View
+                    style={[styles.global, styles.article]}
+                    key={element.id}
+                  >
+                    <Text style={[styles.global, styles.sectionContentH2]}>
+                      {`${element.college + ", " + element.city}`}
+                    </Text>
+                    <Text style={[styles.global, styles.subDetails]}>
+                      {`${element.from + " - " + element.to}`}
+                    </Text>
+                    <Text style={[styles.global, styles.paragraph]}>
+                      {`${element.grade}, ${element.subject}`}
+                    </Text>
+                  </View>
+                );
+              })}
             </View>
+            <View style={[styles.global, styles.clear]}></View>
           </View>
-        </Page>
-      </Document>
-    </PDFViewer>
+        </View>
+      </Page>
+    </Document>
     /* jshint ignore:end */
   );
 }

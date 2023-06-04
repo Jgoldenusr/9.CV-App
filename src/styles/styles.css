@@ -72,11 +72,14 @@ footer {
   color: white;
 }
 .container {
-  background-color: white;
-  box-shadow: 2px 2px 2px 1px grey;
   margin: 20px auto;
   padding: 1rem;
   width: 50vw;
+}
+.pdfContainer {
+  height: 70vh;
+  width: 100%;
+  margin: 0.5rem auto;
 }
 fieldset {
   background-color: whitesmoke;
@@ -146,7 +149,7 @@ h3 {
   border-style: solid;
   border-width: 2px;
   display: flex;
-  flex: 1 0 45%;
+  flex: 1 0 90%;
   height: max-content;
   margin: 5px;
 }
@@ -196,10 +199,6 @@ h3 {
   .container {
     width: 95vw;
     margin: 20px auto;
-  }
-  .card {
-    flex: 1 0 90%;
-    border-left-width: 0.5rem;
   }
   .btnContainer .fa,
   .button {

@@ -2,6 +2,8 @@ import "./styles/styles.css";
 import uniqid from "uniqid";
 import { useState } from "react";
 import { Controller, Header, Footer } from "./components/components.js";
+import { saveAs } from "file-saver";
+import { pdf, PDFViewer } from "@react-pdf/renderer";
 import Docpdf from "./components/pdfDoc.js";
 import CVForm from "./components/cvForm.js";
 
@@ -125,20 +127,38 @@ function App() {
     });
     setView("");
   };
+  const clearInfo = function (e) {
+    setInfo({
+      ...info,
+      educationInfo: template.educationInfo,
+      practicalInfo: template.practicalInfo,
+    });
+    return 1;
+  };
+  const generatePdf = async function (e) {
+    /* jshint ignore:start */
+    const blob = await pdf(
+      <Docpdf
+        basicInfo={info.basicInfo}
+        practicalInfoArray={infoList.practicalInfo}
+        educationInfoArray={infoList.educationInfo}
+        imageSrc={info.imageSrc}
+      />
+    ).toBlob();
+    saveAs(blob, "Mi CV");
+    /* jshint ignore:end */
+  };
 
   return (
     /* jshint ignore:start */
     <div className="main">
       <Header title="CV-App" />
       <div className="container">
-        <Controller addPhoto={addPhoto} setView={setView} />
+        <Controller cbs={(addPhoto, clearInfo, generatePdf, setView)} />
         {view === "pdfPreview" ? (
-          <Docpdf
-            basicInfo={info.basicInfo}
-            practicalInfoArray={infoList.practicalInfo}
-            educationInfoArray={infoList.educationInfo}
-            imageSrc={info.imageSrc}
-          />
+          <PDFViewer className="pdfContainer">
+            <Docpdf info={info} infoList={infoList} />
+          </PDFViewer>
         ) : (
           <CVForm
             info={info}
@@ -159,9 +179,5 @@ function App() {
     /* jshint ignore:end */
   );
 }
-
-/*<div className="btn">
-  <FontAwesomeIcon icon={faFileDownload} className="fa" />
-</div>*/
 
 export default App;

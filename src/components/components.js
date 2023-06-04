@@ -3,6 +3,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faBriefcase,
   faFileCircleCheck,
+  faFileDownload,
   faFilePdf,
   faGears,
   faGraduationCap,
@@ -35,7 +36,7 @@ function Footer() {
   );
 }
 function Controller(props) {
-  const { setView, addPhoto } = props;
+  const { addPhoto, clearInfo, generatePdf, setView } = props.cbs;
   return (
     /* jshint ignore:start */
     <div className="btnContainer">
@@ -47,6 +48,9 @@ function Controller(props) {
           }}
         >
           <FontAwesomeIcon icon={faFilePdf} className="fa" />
+        </div>
+        <div className="btn" onClick={generatePdf}>
+          <FontAwesomeIcon icon={faFileDownload} className="fa" />
         </div>
       </div>
       <div>
@@ -64,10 +68,16 @@ function Controller(props) {
         <div className="btn" onClick={() => setView("basicInfo")}>
           <FontAwesomeIcon icon={faIdCard} className="fa" />
         </div>
-        <div className="btn" onClick={() => setView("educationInfo")}>
+        <div
+          className="btn"
+          onClick={() => clearInfo() && setView("educationInfo")}
+        >
           <FontAwesomeIcon icon={faGraduationCap} className="fa" />
         </div>
-        <div className="btn" onClick={() => setView("practicalInfo")}>
+        <div
+          className="btn"
+          onClick={() => clearInfo() && setView("practicalInfo")}
+        >
           <FontAwesomeIcon icon={faBriefcase} className="fa" />
         </div>
         <div className="btn" onClick={() => setView("cards")}>

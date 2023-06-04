@@ -5,10 +5,10 @@ export default function CVForm(props) {
   const { basicInfo, practicalInfo, educationInfo } = props.info;
   const {
     addSomething,
+    deleteSomething,
     handleChange,
     setToUpdate,
     updateSomething,
-    deleteSomething,
   } = props.cbs;
 
   return (
