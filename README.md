@@ -6,7 +6,7 @@ The page was meant to showcase the React skills learned so far, mainly component
 
 The page allows you to create a CV with dynamic data. You can also have a preview of the CV or download it in pdf format.
 
-You can test the demo [here.](https://github.com/Jgoldenusr/9.CV-App)
+You can test the demo [here.](https://jgoldenusr.github.io/9.CV-App/)
 
 ## Resources
 
